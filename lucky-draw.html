@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCKY DRAW</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        .countdown, .ticket-counter {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .ticket {
+            border: 2px dashed #007bff;
+            padding: 15px;
+            margin-top: 20px;
+            background: #fff;
+            display: inline-block;
+            text-align: left;
+            width: 80%;
+        }
+        .ticket-footer {
+            text-align: right;
+            font-size: 14px;
+            color: #555;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LUCKY DRAW</h1>
+        <p class="countdown">Draw Date: <strong>April 5</strong></p>
+        <p class="ticket-counter">Tickets Sold: <strong>0</strong></p>
+        <button onclick="buyTicket()">Buy Ticket</button>
+        <button onclick="checkAccount()">Check Account</button>
+        
+        <div class="ticket" id="ticket" style="display: none;">
+            <p><strong>Participant Name:</strong> <span id="participantName">John Doe</span></p>
+            <p><strong>Ticket Number:</strong> <span id="ticketNumber">#123</span></p>
+            <p class="ticket-footer">PROMOTED BY ASELLPREMIUM</p>
+        </div>
+    </div>
+    
+    <script>
+        function buyTicket() {
+            document.getElementById('ticket').style.display = 'block';
+            document.getElementById('participantName').textContent = prompt("Enter your name:", "John Doe");
+            document.getElementById('ticketNumber').textContent = "#" + Math.floor(Math.random() * 250 + 1);
+        }
+        
+        function checkAccount() {
+            alert('Account check feature coming soon!');
+        }
+    </script>
+</body>
+</html>
